@@ -3,7 +3,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <span class="brand-text font-weight-light">CV Generator</span>
+        <span class="brand-text font-weight-light d-flex justify-content-center"><img style="max-width: 150px"  src="{{ asset('assets/img/quickcv-logo.png') }}" alt="logo"></span>
     </a>
 
     <!-- Sidebar -->
