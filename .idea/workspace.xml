@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40605466-8001-48c3-942e-17e97b844400" name="Changes" comment="#4 models-factories-migrations" />
+    <list default="true" id="40605466-8001-48c3-942e-17e97b844400" name="Changes" comment="#4 models-factories-migrations">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2025_03_06_143736_create_experience_responsibles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2025_03_06_143737_create_skills_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/0001_01_01_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/0001_01_01_000003_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/0001_01_01_000001_create_cache_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/0001_01_01_000004_create_cache_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/0001_01_01_000002_create_jobs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/0001_01_01_000005_create_jobs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_contacts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_contacts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_education_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_education_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_experience_responsibles_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_experiences_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_experiences_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_03_06_143735_create_skills_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_03_06_143736_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/0001_01_01_000002_create_roles_table.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,9 +28,7 @@
   </component>
   <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable path="composer" />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -165,7 +179,6 @@
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/deprecations" />
-      <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -184,6 +197,7 @@
     "RunOnceActivity.OpenDatabaseViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "1-create-model-migrations-seeders-and-factories",
     "last_opened_file_path": "/home/emre/Desktop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -232,8 +246,7 @@
       <updated>1740328750664</updated>
       <workItem from="1740328751896" duration="945000" />
       <workItem from="1740329708804" duration="10381000" />
-      <workItem from="1741268438310" duration="1212000" />
-      <workItem from="1741270115421" duration="900000" />
+      <workItem from="1741268438310" duration="609000" />
     </task>
     <task id="LOCAL-00001" summary="#1 db-seeders">
       <option name="closed" value="true" />

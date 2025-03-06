@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('experiences', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // users tablosuna referans ama user tablosunu sonradan ekleyeceğiz, bu yüzden foreign key constraint eklemiyoruz.
+            // user_id; users tablosu sonradan ekleneceği için foreign key constraint eklenmiyor.
             $table->unsignedBigInteger('user_id');
-            $table->string('company_name', 255);
-            $table->string('position', 255);
-            $table->date('start_date')->nullable();
-            $table->date('end_date')->nullable();
+            $table->string('skill', 255);
+            $table->string('level', 255)->nullable();
             $table->timestamps();
             $table->softDeletes();
 
@@ -29,6 +27,6 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('experiences');
+        Schema::dropIfExists('skills');
     }
 };
