@@ -3,21 +3,19 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\ExperienceResponsible;
+use App\Models\Experience;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ExperienceResponsible>
- */
 class ExperienceResponsibleFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = ExperienceResponsible::class;
+
     public function definition(): array
     {
         return [
-            //
+            'comment_en' => $this->faker->paragraph,
+            'comment_tr' => $this->faker->paragraph,
+            'order'      => $this->faker->numberBetween(1, 10),
         ];
     }
 }

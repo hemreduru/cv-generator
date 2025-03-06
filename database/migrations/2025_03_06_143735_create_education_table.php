@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('educations', function (Blueprint $table) {
+        Schema::create('education', function (Blueprint $table) {
             $table->bigIncrements('id');
-            // user_id; foreign key eklenmeyecek, çünkü users tablosu daha sonra eklenecek.
             $table->unsignedBigInteger('user_id');
             $table->string('type', 255)->nullable();
             $table->string('institution_name', 255)->nullable();
