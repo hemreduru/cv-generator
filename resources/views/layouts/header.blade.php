@@ -13,28 +13,33 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <form action="{{ route('changeLanguage')}}" method="POST">
-                @csrf
-                <input type="hidden" value="en" name="lang">
-                <button type="submit" class="btn btn-link">
-                    <img src="{{ asset('assets/icons/united-kingdom.png') }}" height="20" alt="en" />
-                </button>
-            </form>
-        </li>
-        <li class="nav-item">
-            <form action="{{ route('changeLanguage')}}" method="POST">
-                @csrf
-                <input type="hidden" value="tr" name="lang">
-                <button type="submit" class="btn btn-link"><img src="{{ asset('assets/icons/turkey.png') }}" height="20" alt="tr" /> </button>
-            </form>
-        </li>
+        @if(app()->getLocale() === 'tr')
+            <li class="nav-item">
+                <form action="{{ route('changeLanguage')}}" method="POST">
+                    @csrf
+                    <input type="hidden" value="en" name="lang">
+                    <button type="submit" class="btn btn-link">
+                        <img src="{{ asset('assets/icons/united-kingdom.png') }}" height="20" alt="en"/>
+                    </button>
+                </form>
+            </li>
+        @else
+            <li class="nav-item">
+                <form action="{{ route('changeLanguage')}}" method="POST">
+                    @csrf
+                    <input type="hidden" value="tr" name="lang">
+                    <button type="submit" class="btn btn-link"><img src="{{ asset('assets/icons/turkey.png') }}"
+                                                                    height="20" alt="tr"/></button>
+                </form>
+            </li>
+        @endif
         <li class="nav-item d-flex align-items-center text-muted">
             <span>@lang('Common.welcome'), {{ Auth::user()->name }}</span>
         </li>
         <li class="nav-item d-flex align-items-center">
-            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                <i class="fas fa-sign-out-alt text-danger"></i> @lang('Common.logout')
+            <a class="nav-link" href="{{ route('logout') }}"
+               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                @lang('Common.logout') <i class="fas fa-door-open text-danger"></i>
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
