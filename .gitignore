@@ -28,11 +28,9 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
-# JetBrains IDEs specific files
 .idea/
 .idea/*
 !.idea/.gitignore
 .idea/workspace.xml
 .idea/hosts
 .idea/*.iml
-
