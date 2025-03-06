@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property int $experience_id
  * @property string|null $comment_en
  * @property string|null $comment_tr
+ * @property-read string|null $comment
  * @property int $order
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -30,11 +31,21 @@ class ExperienceResponsible extends Model
         'experience_id', 'comment_en', 'comment_tr', 'order'
     ];
 
+    protected $appends = ['comment'];
+
+
     /**
      * Get the experience that owns this responsible record.
      */
     public function experience()
     {
         return $this->belongsTo(Experience::class);
+    }
+
+    public function getCommentAttribute()
+    {
+        $lang = session('lang', 'en');
+        $column = "comment_{$lang}";
+        return $this->$column ?? null;
     }
 }

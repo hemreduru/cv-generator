@@ -1,19 +1,17 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PersonalInformationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('lang', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
 
-Route::get('/dashboard', function () {
-    return view('pages.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-
-Route::get('/', function () {
-    return view('pages.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/personal-information', [PersonalInformationController::class, 'index'])->name('personal-information.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
