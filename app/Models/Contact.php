@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $phone
  * @property string|null $other_en
  * @property string|null $other_tr
+ * @property-read string|null $other
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
@@ -35,6 +36,8 @@ class Contact extends Model
         'user_id', 'facebook', 'twitter', 'linkedin', 'github', 'phone', 'other_en', 'other_tr'
     ];
 
+    protected $appends = ['other'];
+
     /**
      * Get the user that owns the contact.
      */
@@ -42,4 +45,13 @@ class Contact extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getOtherAttribute()
+    {
+        $lang = session('lang', 'en');
+        $column = "other_{$lang}";
+
+        return $this->$column ?? null;
+    }
+
 }
