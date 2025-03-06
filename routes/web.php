@@ -1,14 +1,18 @@
 <?php
 
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('lang', [LanguageController::class, 'changeLanguage'])->name('changeLanguage');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('pages.dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/', function () {
+    return view('pages.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
