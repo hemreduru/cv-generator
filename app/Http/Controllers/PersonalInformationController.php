@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PersonalInformationUpdateRequest;
 use App\Http\Resources\UserResource;
 use App\Models\Education;
 use App\Models\User;
@@ -24,7 +25,20 @@ class PersonalInformationController extends Controller
         return view('pages.personal-information.index', compact('user'));
     }
 
-    public function saveInformations(){
+    public function edit(){
+        $user = Auth::user()->load([
+            'contact',
+            'experiences.responsibles',
+            'educations',
+            'skills'
+        ]);
+//        dd($user);
+        return view('pages.personal-information.edit', compact('user'));
+    }
+
+    public function update(PersonalInformationUpdateRequest $request)
+    {
+        dd($request->all());
 
     }
 }

@@ -23,6 +23,6 @@
 
 @include('layouts.scripts')
 <!-- Ekstra scriptler eklemek için stack -->
-@stack('scripts')
+@yield('scripts')
 </body>
 </html>

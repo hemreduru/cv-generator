@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -57,14 +58,20 @@ class User extends Authenticatable
         'two_factor_confirmed_at' => 'datetime',
         'birth_date' => 'date',
     ];
-
+    const ADMIN = 1;
+    const USER = 2;
 
     /**
      * Role relationship.
      */
-    public function role()
+    public function role(): BelongsTo
     {
         return $this->belongsTo(Role::class);
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role && $this->role->id === self::ADMIN;
     }
 
     /**
