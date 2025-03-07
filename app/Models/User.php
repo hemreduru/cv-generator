@@ -32,9 +32,9 @@ use Illuminate\Notifications\Notifiable;
  * Relationships:
  * @property \App\Models\Role $role
  * @property \App\Models\Contact $contact
- * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Education[] $educations
- * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Experience[] $experiences
- * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[] $skills
+ * @property \App\Models\Education $educations
+ * @property \App\Models\Experience $experiences
+ * @property \App\Models\Skill $skills
  */
 
 class User extends Authenticatable
@@ -98,4 +98,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Skill::class);
     }
+
+
 }
